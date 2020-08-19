@@ -535,6 +535,9 @@ static struct ref *get_ref_map(struct remote *remote,
 		tail = &rm->next;
 	}
 
+	/* apply any negative refspecs now to prune the list of refs */
+	ref_map = apply_negative_refspecs(ref_map, rs);
+
 	ref_map = ref_remove_duplicates(ref_map);
 
 	refname_hash_init(&existing_refs);
