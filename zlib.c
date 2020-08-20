@@ -3,7 +3,7 @@
  * at init time.
  */
 #include "cache.h"
-
+#include <stdio.h>
 static const char *zerr_to_string(int status)
 {
 	switch (status) {
